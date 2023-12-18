@@ -17,7 +17,7 @@ User = namedtuple('User', 'username password')
 Book = namedtuple('Book', 'name description')
 UserBook = namedtuple('UserBook', 'user_name book_name')
 
-REST_HOST = 'http://host.docker.internal:8080'
+REST_HOST = 'http://host.docker.internal:8001'
 SAFE_TOKEN = r'[a-zA-Z0-9_-]+'
 
 class DBHandler:
