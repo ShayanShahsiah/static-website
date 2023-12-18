@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+
+    environment:
+      - "MYSQL_ROOT_PASSWORD=MyPass123"
+    ports:
+      - "33061:3306"
+    volumes:
+      - "./init.sql:/docker-entrypoint-initdb.d/1.sql"
+      - ./dbdata:/var/lib/mysql
+
+  rest:
+    build: ./rest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "mysql"
+
+  gql:
+    build: ./gql
+    ports:
+      - "8000:8000"
+    depends_on:
+      - "mysql"

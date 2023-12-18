@@ -1,0 +1,19 @@
+type User {
+    username: String!
+    password: String!
+}
+
+type Book {
+    name: String!
+    description: String
+}
+
+type Query {
+    users: [User]
+    books: [Book]
+    userBooks(username: String!): [Book]
+}
+
+type Mutation {
+    addBook(name: String!, username: String): Boolean!
+}
