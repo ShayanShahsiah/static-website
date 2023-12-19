@@ -139,7 +139,7 @@ class WebRequestHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-	addr = ('0.0.0.0', 8001)
+	addr = ('0.0.0.0', 8002)
 	server = HTTPServer(addr, WebRequestHandler)
 	logging.info(f'Serving on {addr}')
 
