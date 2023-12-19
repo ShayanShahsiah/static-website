@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-				sh 'docker run --name my-rest -p 8001:8001 -d my-rest-img'
-				sh 'docker run --name my-gql -p 8000:8000 -d my-gql-img'
+				sh 'docker run --rm --name my-rest -p 8001:8001 -d my-rest-img'
+				sh 'docker run --rm --name my-gql -p 8000:8000 -d my-gql-img'
             }
         }
     }
