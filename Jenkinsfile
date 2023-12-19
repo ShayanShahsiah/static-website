@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-				sh 'docker run -p 8001:8001 my-rest'
-				sh 'docker run -p 8000:8000 my-gql'
+				sh 'docker run -p 8001:8001 -d my-rest'
+				sh 'docker run -p 8000:8000 -d my-gql'
             }
         }
     }
